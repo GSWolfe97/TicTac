@@ -1,0 +1,165 @@
+package tictac;
+import java.util.Scanner; 
+public class TicTac {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int win = 0;
+        int turn = 1;
+        int move = 0;
+        String one = " 1 ";
+        String two = " 2 ";
+        String three = " 3 ";
+        String four = " 4 ";
+        String five = " 5 ";
+        String six = " 6 ";
+        String seven = " 7 ";
+        String eight = " 8 ";
+        String nine = " 9 ";
+        
+        while (win == 0){
+            System.out.println(one + "|" + two + "|" + three);
+            System.out.println("-----------");
+            System.out.println(four + "|" + five + "|" + six);
+            System.out.println("-----------");
+            System.out.println(seven + "|" + eight + "|" + nine);
+            
+            System.out.println("");
+            System.out.println("Player " + turn + " enter your move: ");
+            move = input.nextInt();
+  
+//Moves for player 1            
+            if(move == 1 && turn == 1){
+                one = " X ";
+            } 
+            if(move == 2 && turn == 1){
+                two = " X ";
+            } 
+            if(move == 3 && turn == 1){
+                three = " X ";
+            } 
+            if(move == 4 && turn == 1){
+                four = " X ";
+            } 
+            if(move == 5 && turn == 1){
+                five = " X ";
+            } 
+            if(move == 6 && turn == 1){
+                six = " X ";
+            } 
+            if(move == 7 && turn == 1){
+                seven = " X ";
+            } 
+            if(move == 8 && turn == 1){
+                eight = " X ";
+            } 
+            if(move == 9 && turn == 1){
+                nine = " X ";
+            } 
+            
+// Moves for player 2            
+            if(move == 1 && turn == 2){
+                one = " O ";
+            } 
+            if(move == 2 && turn == 2){
+                two = " O ";
+            } 
+            if(move == 3 && turn == 2){
+                three = " O ";
+            } 
+            if(move == 4 && turn == 2){
+                four = " O ";
+            } 
+            if(move == 5 && turn == 2){
+                five = " O ";
+            } 
+            if(move == 6 && turn == 2){
+                six = " O ";
+            } 
+            if(move == 7 && turn == 2){
+                seven = " O ";
+            } 
+            if(move == 8 && turn == 2){
+                eight = " O ";
+            } 
+            if(move == 9 && turn == 2){
+                nine = " O ";
+            } 
+            turn ++;
+            if(turn > 2){
+                turn = 1;
+            }
+            
+//Check for win
+            //Player 1
+            if(one == " X " && two == " X " && three == " X "){
+                win = 1;
+            }
+            if(four == " X " && five == " X " && six == " X "){
+                win = 1;
+            }
+            if(seven == " X " && eight == " X " && nine == " X "){
+                win = 1;
+            } 
+            if(one == " X " && four == " X " && seven == " X "){
+                win = 1;
+            }
+            if(two == " X " && five == " X " && eight == " X "){
+                win = 1;
+            }
+            if(three == " X " && six == " X " && nine == " X "){
+                win = 1;
+            }
+            if(one == " X " && five == " X " && nine == " X "){
+                win = 1;
+            }
+            if(seven == " X " && five == " X " && three == " X "){
+                win = 1;
+            }
+            
+            //Player 2
+            if(one == " O " && two == " O " && three == " O "){
+                win = 2;
+            }
+            if(four == " O " && five == " O " && six == " O "){
+                win = 2;
+            }
+            if(seven == " O " && eight == " O " && nine == " O "){
+                win = 2;
+            } 
+            if(one == " O " && four == " O " && seven == " O "){
+                win = 2;
+            }
+            if(two == " O " && five == " O " && eight == " O "){
+                win = 2;
+            }
+            if(three == " O " && six == " O " && nine == " O "){
+                win = 2;
+            }
+            if(one == " O " && five == " O " && nine == " O "){
+                win = 2;
+            }
+            if(seven == " O " && five == " O " && three == " O "){
+                win = 2;
+            }
+            
+            //No win (all spots are filled up)
+            if(one != " 1 " && two != " 2 " && three != " 3 " && four != " 4 " && five != " 5 " && six != " 6 " && seven != " 7 " && eight != " 8 " && nine != " 9 "){
+                win = 3;
+            }                     
+        } //End While
+             
+        System.out.println(one + "|" + two + "|" + three);
+        System.out.println("-----------");
+        System.out.println(four + "|" + five + "|" + six);
+        System.out.println("-----------");
+        System.out.println(seven + "|" + eight + "|" + nine);
+
+        
+        if (win == 1 || win == 2){
+            System.out.println("Player " + win + " wins!");
+        } else {
+            System.out.println("Nobody wins...");
+        }
+    }
+    
+}
