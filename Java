@@ -15,6 +15,19 @@ public class TicTac {
         String seven = " 7 ";
         String eight = " 8 ";
         String nine = " 9 ";
+       
+        //Determine if a space is open or not
+        int oneX = 0;
+        int twoX = 0;   
+        int thrX = 0;  
+        int fouX = 0; 
+        int fivX = 0;  
+        int sixX = 0;  
+        int sevX = 0; 
+        int eigX = 0; 
+        int ninX = 0;
+        
+        
         
         while (win == 0){
             System.out.println(one + "|" + two + "|" + three);
@@ -25,64 +38,130 @@ public class TicTac {
             
             System.out.println("");
             System.out.println("Player " + turn + " enter your move: ");
+            
             move = input.nextInt();
-  
+            
+//Check for invalid move
+            if(move == 1 && oneX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 2 && twoX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 3 && thrX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 4 && fouX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 5 && fivX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 6 && sixX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 7 && sevX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 8 && eigX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            if(move == 9 && ninX == 1){
+                System.out.println("Invalid move, select another spot.");
+                System.out.println("Player " + turn + " enter your move: ");
+                move = input.nextInt();
+            }
+            
 //Moves for player 1            
-            if(move == 1 && turn == 1){
+            if(move == 1 && turn == 1 && oneX == 0){
                 one = " X ";
+                oneX = 1;
             } 
-            if(move == 2 && turn == 1){
+            if(move == 2 && turn == 1 && twoX == 0){
                 two = " X ";
+                twoX = 1;
             } 
-            if(move == 3 && turn == 1){
+            if(move == 3 && turn == 1 && thrX == 0){
                 three = " X ";
+                thrX = 1;
             } 
-            if(move == 4 && turn == 1){
+            if(move == 4 && turn == 1 && fouX == 0){
                 four = " X ";
+                fouX = 1;
             } 
-            if(move == 5 && turn == 1){
+            if(move == 5 && turn == 1 && fivX == 0){
                 five = " X ";
+                fivX = 1;
             } 
-            if(move == 6 && turn == 1){
+            if(move == 6 && turn == 1 && sixX == 0){
                 six = " X ";
+                sixX = 1;
             } 
-            if(move == 7 && turn == 1){
+            if(move == 7 && turn == 1 && sevX == 0){
                 seven = " X ";
+                sevX = 1;
             } 
-            if(move == 8 && turn == 1){
+            if(move == 8 && turn == 1 && eigX == 0){
                 eight = " X ";
+                eigX = 1;
             } 
-            if(move == 9 && turn == 1){
+            if(move == 9 && turn == 1 && ninX == 0){
                 nine = " X ";
+                ninX = 1;
             } 
             
 // Moves for player 2            
-            if(move == 1 && turn == 2){
+            if(move == 1 && turn == 2 && oneX == 0){
                 one = " O ";
+                oneX = 1;
             } 
-            if(move == 2 && turn == 2){
+            if(move == 2 && turn == 2 && twoX == 0){
                 two = " O ";
+                twoX = 1;
             } 
-            if(move == 3 && turn == 2){
+            if(move == 3 && turn == 2 && thrX == 0){
                 three = " O ";
+                thrX = 1;
             } 
-            if(move == 4 && turn == 2){
+            if(move == 4 && turn == 2 && fouX == 0){
                 four = " O ";
+                fouX = 1;
             } 
-            if(move == 5 && turn == 2){
+            if(move == 5 && turn == 2 && fivX == 0){
                 five = " O ";
+                fivX = 1;
             } 
-            if(move == 6 && turn == 2){
+            if(move == 6 && turn == 2 && sixX == 0){
                 six = " O ";
+                sixX = 1;
             } 
-            if(move == 7 && turn == 2){
+            if(move == 7 && turn == 2 && sevX == 0){
                 seven = " O ";
+                sevX = 1;
             } 
-            if(move == 8 && turn == 2){
+            if(move == 8 && turn == 2 && eigX == 0){
                 eight = " O ";
+                eigX = 1;
             } 
-            if(move == 9 && turn == 2){
+            if(move == 9 && turn == 2 && ninX == 0){
                 nine = " O ";
+                ninX = 1;
             } 
             turn ++;
             if(turn > 2){
@@ -160,6 +239,5 @@ public class TicTac {
         } else {
             System.out.println("Nobody wins...");
         }
-    }
-    
+    }   
 }
