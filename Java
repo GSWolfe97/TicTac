@@ -1,11 +1,27 @@
 package tictac;
+import java.util.Random;
 import java.util.Scanner; 
 public class TicTac {
     public static void main(String[] args) {
+        int turn = 0;
+        System.out.println("Press Enter to flip the coin");
+        //Waits for user to enter a key to continue
+        Scanner scanner = new Scanner(System.in);
+        scanner.nextLine();
         Scanner input = new Scanner(System.in);
+        //Generate a 0 or a 1.
+        int rand = new Random().nextInt(2);
+        if(rand == 0){
+            turn = 1;
+            System.out.println("The coin landed on heads, player 1 goes first.");
+        }
+        if(rand == 1){
+            turn = 2;
+            System.out.println("The coin landed on tails, player 2 goes first.");
+        }
+        
         int win = 0;
-        int turn = 1;
-        int move = 0;
+        //Strings that display in their respective spots
         String one = " 1 ";
         String two = " 2 ";
         String three = " 3 ";
@@ -16,7 +32,7 @@ public class TicTac {
         String eight = " 8 ";
         String nine = " 9 ";
        
-        //Determine if a space is open or not
+        //Place holders for spots to tell if the spot is taken or not.
         int oneX = 0;
         int twoX = 0;   
         int thrX = 0;  
@@ -28,7 +44,7 @@ public class TicTac {
         int ninX = 0;
         
         
-        
+        //Loop to run the game, is broken when there is a winner.
         while (win == 0){
             System.out.println(one + "|" + two + "|" + three);
             System.out.println("-----------");
@@ -39,56 +55,148 @@ public class TicTac {
             System.out.println("");
             System.out.println("Player " + turn + " enter your move: ");
             
-            move = input.nextInt();
+            int move = input.nextInt();
             
-//Check for invalid move
+        //Check for invalid move (space taken).
+        int valid = 0;
+        while (valid == 0) {
             if(move == 1 && oneX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 1){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 2 && twoX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 2){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 3 && thrX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 3){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 4 && fouX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 4){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 5 && fivX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 5){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 6 && sixX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 6){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 7 && sevX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 7){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 8 && eigX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 8){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
             if(move == 9 && ninX == 1){
-                System.out.println("Invalid move, select another spot.");
-                System.out.println("Player " + turn + " enter your move: ");
-                move = input.nextInt();
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Invalid move, select another spot.");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move == 9){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
             }
+            if(move < 1 || move > 9){
+                valid = 0;
+                while (valid == 0){
+                    System.out.println("Spot is out of bounds, please select another spot");
+                    System.out.println("Player " + turn + " enter your move: ");
+                    move = input.nextInt();
+                    if (move < 1 || move > 9){
+                        valid = 0;
+                    }else{
+                        valid = 1;
+                    }
+                }
+            }
+            //If the spot is open, break the validator loop
+            else {
+                valid = 1;
+            }
+        }
             
-//Moves for player 1            
+        //Moves for player 1            
             if(move == 1 && turn == 1 && oneX == 0){
                 one = " X ";
                 oneX = 1;
@@ -126,7 +234,7 @@ public class TicTac {
                 ninX = 1;
             } 
             
-// Moves for player 2            
+        // Moves for player 2            
             if(move == 1 && turn == 2 && oneX == 0){
                 one = " O ";
                 oneX = 1;
@@ -163,77 +271,35 @@ public class TicTac {
                 nine = " O ";
                 ninX = 1;
             } 
-            turn ++;
+            
+        //Check for win
+            //Player 1
+            if(one == " X " && two == " X " && three == " X " || four == " X " && five == " X " && six == " X " || seven == " X " && eight == " X " && nine == " X " || one == " X " && four == " X " && seven == " X " || two == " X " && five == " X " && eight == " X " || three == " X " && six == " X " && nine == " X " || one == " X " && five == " X " && nine == " X " || seven == " X " && five == " X " && three == " X "){
+                win = turn;
+            }
+            //Player 2
+            if(one == " O " && two == " O " && three == " O " || four == " O " && five == " O " && six == " O " || seven == " O " && eight == " O " && nine == " O " || one == " O " && four == " O " && seven == " O " || two == " O " && five == " O " && eight == " O " || three == " O " && six == " O " && nine == " O " || one == " O " && five == " O " && nine == " O " || seven == " O " && five == " O " && three == " O "){
+                win = turn;
+            }          
+            //No win (all spots are filled up)
+            if(one != " 1 " && two != " 2 " && three != " 3 " && four != " 4 " && five != " 5 " && six != " 6 " && seven != " 7 " && eight != " 8 " && nine != " 9 " && win != 1 && win != 2){
+                win = 3;
+            }       
+                        if(win != 1){
+                turn ++;
+            }
             if(turn > 2){
                 turn = 1;
             }
-            
-//Check for win
-            //Player 1
-            if(one == " X " && two == " X " && three == " X "){
-                win = 1;
-            }
-            if(four == " X " && five == " X " && six == " X "){
-                win = 1;
-            }
-            if(seven == " X " && eight == " X " && nine == " X "){
-                win = 1;
-            } 
-            if(one == " X " && four == " X " && seven == " X "){
-                win = 1;
-            }
-            if(two == " X " && five == " X " && eight == " X "){
-                win = 1;
-            }
-            if(three == " X " && six == " X " && nine == " X "){
-                win = 1;
-            }
-            if(one == " X " && five == " X " && nine == " X "){
-                win = 1;
-            }
-            if(seven == " X " && five == " X " && three == " X "){
-                win = 1;
-            }
-            
-            //Player 2
-            if(one == " O " && two == " O " && three == " O "){
-                win = 2;
-            }
-            if(four == " O " && five == " O " && six == " O "){
-                win = 2;
-            }
-            if(seven == " O " && eight == " O " && nine == " O "){
-                win = 2;
-            } 
-            if(one == " O " && four == " O " && seven == " O "){
-                win = 2;
-            }
-            if(two == " O " && five == " O " && eight == " O "){
-                win = 2;
-            }
-            if(three == " O " && six == " O " && nine == " O "){
-                win = 2;
-            }
-            if(one == " O " && five == " O " && nine == " O "){
-                win = 2;
-            }
-            if(seven == " O " && five == " O " && three == " O "){
-                win = 2;
-            }
-            
-            //No win (all spots are filled up)
-            if(one != " 1 " && two != " 2 " && three != " 3 " && four != " 4 " && five != " 5 " && six != " 6 " && seven != " 7 " && eight != " 8 " && nine != " 9 "){
-                win = 3;
-            }                     
         } //End While
-             
+        //Display the board again when there is a winner   
         System.out.println(one + "|" + two + "|" + three);
         System.out.println("-----------");
         System.out.println(four + "|" + five + "|" + six);
         System.out.println("-----------");
         System.out.println(seven + "|" + eight + "|" + nine);
 
-        
+        //Displays the winner
         if (win == 1 || win == 2){
             System.out.println("Player " + win + " wins!");
         } else {
